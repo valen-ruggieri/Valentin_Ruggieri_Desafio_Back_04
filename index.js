@@ -1,4 +1,4 @@
-const { application } = require('express');
+
 const express = require('express');
 const app = express();
 const router = require('./productosRouter');
@@ -8,10 +8,12 @@ const server = app.listen(PORT,()=>{
     console.log(`Servidor listo en el puerto ${PORT} ✅`);
 })
 
-app.use("/api/Addproductos",express.static('../Desafio 4'));
+
+
+app.use("/api/addproductos",express.static('../Desafio 4'));
 
 app.use(express.urlencoded({ extended: true}));
-
+app.use(express.json());
 
 app.use("/api",router);
 

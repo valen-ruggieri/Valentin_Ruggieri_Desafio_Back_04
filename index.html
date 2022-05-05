@@ -13,14 +13,24 @@
 
     <title>Form</title>
   </head>
-  <body class="container d-flex justify-content-center aling-items-center mb-5" > 
+  <body class="container d-flex justify-content-center aling-items-center mb-3" > 
       
 
-    <form class="container border border-2  mt-5 rounded-bottom rounded-3 bg-light" action="/api/Addproductos/" method="POST" >
-    <h1 class="text-center mt-5 h5">TIENDA DE PRODUCTOS</h1 >
+    <form class="container border border-2  mt-5 rounded-bottom rounded-3 bg-light" action="/api/addproductos/" method="POST" >
+    <h1 class="text-center mt-4 h5">TIENDA DE PRODUCTOS</h1 >
        
       
-        
+      <div class="col d-flex justify-content-center ">
+        <div class="input-group mt-5 w-50 ">
+        <span class="input-group-text">😀</span>
+        <input required
+          type="text"
+          class="form-control  "
+          placeholder="Insertar emoji"
+          name="emoji"
+        />
+        </div>
+      </div>
           <div class="col d-flex justify-content-center ">
             <div class="input-group mt-5 w-50 ">
             <span class="input-group-text">🎈</span>
@@ -53,20 +63,20 @@
               class="form-control "
               placeholder="Imagen Producto"
               name="url"
+              value="https://producto.com/data/.png"
             />
             </div>
           </div>
           <div class="col d-flex justify-content-center">
             <input 
               type="submit"
-              class="form-control m-5  w-25 btn btn-primary"
+              class="form-control m-4  w-25 btn btn-primary"
               placeholder="Last name"
               aria-label="Last name"
               
             />
           </div>
-        
-     
+         
     </form>
 
     <script
