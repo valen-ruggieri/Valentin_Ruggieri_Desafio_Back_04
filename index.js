@@ -1,3 +1,4 @@
+const { application } = require('express');
 const express = require('express');
 const app = express();
 const router = require('./productosRouter');
@@ -8,3 +9,4 @@ app.listen(PORT,()=>{
 })
 
 
+application.use("/api",router);
