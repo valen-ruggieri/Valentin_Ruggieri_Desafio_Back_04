@@ -4,9 +4,15 @@ const app = express();
 const router = require('./productosRouter');
 const PORT = 8000;
 
-app.listen(PORT,()=>{
+const server = app.listen(PORT,()=>{
     console.log(`Servidor listo en el puerto ${PORT} ✅`);
 })
 
+app.use("/api/Addproductos",express.static('../Desafio 4'));
 
-application.use("/api",router);
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+
+app.use("/api",router);
+
+server.on("error", (error) => console.log("Hubo un error " + error));
