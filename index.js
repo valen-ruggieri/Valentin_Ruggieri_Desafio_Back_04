@@ -10,7 +10,7 @@ const server = app.listen(PORT,()=>{
 
 
 
-app.use("/api/addproductos",express.static('../Desafio 4'));
+app.use("/api/addproductos",express.static('./index.html'));
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());

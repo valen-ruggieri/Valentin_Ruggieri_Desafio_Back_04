@@ -1,31 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const styles = require('../Desafio 4/styles')
+const styles = require('./styles');
+let productos = require('./productos')
 
 
-let productos = [
-  {
-    id: 1,
-    titulo: "Remera",
-    emoji:"👕",
-    precio: 1500,
-    url: "https://producto.com/data/.png"
-  },
-  {
-    id: 2,
-    titulo: "Pantalon",
-    emoji:"👖",
-    precio: 3000,
-    url: "https://producto.com/data/.png"
-  },
-  {
-    id: 3,
-    titulo: "Campera",
-    emoji:"🧥",
-    precio: 5000,
-    url: "https://producto.com/data/.png"
-  },
-];
 
 router.get("/productos", (req, res) => {
   try {
@@ -61,9 +39,7 @@ router.post("/addproductos", (req, res) => {
 
     prodPOST.id = productos.length;
     productos.push(prodPOST);
-    return res.json({
-      message: "producto agregado correctamente con id: " + prodPOST.id,
-    });
+    res.redirect('/api/productos');
   } catch (err) {
     return res.json({ error: "producto no encontrado" });
   }
